@@ -1,0 +1,45 @@
+---
+title: Connecting Signal Sources
+sidebar: Docs
+showTitle: true
+---
+
+Inbox identifies potential work by monitoring **Signal Sources**. These sources provide the raw data that AI agents use to research and triage issues.
+
+## Internal PostHog Sources
+
+These sources are available by default if you are already using PostHog.
+
+### Error Tracking
+Monitors your production exceptions. Inbox triggers reports when:
+- A new unique error is first seen.
+- An error is reopened after being marked resolved.
+- There is a significant spike in error volume for an existing issue.
+
+### Support Conversations
+Analyzes user support tickets from PostHog's built-in [support features](/docs/support). It identifies actionable bug reports or feature requests hidden within user chats.
+
+### Session Replay
+(Beta) Uses AI to analyze [session recordings](/docs/session-replay) for anomalous user behavior, UX friction points, or rage clicks that don't necessarily trigger an error log.
+
+## External Integrations
+
+You can connect external tools to Inbox to consolidate your engineering work into one place.
+
+### GitHub Issues
+Inbox monitors your repositories for new issues. When a GitHub issue is opened, Inbox automatically kicks off a **Research Task** to see if it can propose a fix.
+
+### Linear & Zendesk
+By connecting Linear (for project management) or Zendesk (for customer support), Inbox can:
+1.  Read the ticket/issue context.
+2.  Search your codebase for relevant logic.
+3.  Propose a fix that references the original ticket ID.
+
+## Configuration
+
+To manage your sources:
+1.  Navigate to **Inbox** in the main PostHog navigation.
+2.  Click the **Settings** icon (or the "Signal Sources" tab).
+3.  Toggle the sources you wish to enable and follow the authentication prompts for external services.
+
+> **Note:** For agents to successfully research issues from these sources, you must have a connected repository with a configured [MCP server](/docs/ai-engineering/mcp).

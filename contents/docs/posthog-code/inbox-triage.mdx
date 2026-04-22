@@ -1,0 +1,33 @@
+---
+title: Triage and Prioritization
+sidebar: Docs
+showTitle: true
+---
+
+The Inbox isn't just a list of errors; it's an intelligent triage system. It uses AI to cluster millions of raw signals into actionable **Reports** and ranks them so you know what to work on first.
+
+## Understanding Reports
+
+A **Report** is a high-level summary of an issue. Each report contains:
+- **The "What":** A clear description of the bug or problem.
+- **Priority:** Ranked from P0 (Critical) to P3 (Low).
+- **Actionability:** A status indicating if the AI agent has found a clear path to a code-based fix.
+
+## How Priority is Determined
+
+Inbox uses a "Product-Aware" prioritization engine. Instead of just looking at error frequency, it analyzes:
+1.  **Code Importance:** Does the issue occur in a "hot path" like your checkout, signup, or billing logic?
+2.  **User Impact:** How many unique users are affected? Are they on a high-value billing plan?
+3.  **Severity:** Is the product completely broken for these users, or is it a minor UX glitch?
+
+## The Triage Workflow
+
+1.  **P0 & P1 (Immediate Action):** These should be your first priority. If they are marked as **Actionable**, an agent has likely already opened a pull request.
+2.  **Actionable Reports:** Focus on these even if the priority is lower. These represent "slam dunk" fixes where the agent has already done the research and implementation work for you.
+3.  **Needs Research:** If a report isn't yet actionable, you can manually trigger a **Research Task** to have an agent investigate the codebase.
+
+## Assigning Owners
+
+Inbox automatically suggests reviewers and owners for each report based on:
+- **GitHub Blame:** Who recently touched the affected lines of code.
+- **Historical Ownership:** Who has resolved similar issues in this part of the codebase before.
