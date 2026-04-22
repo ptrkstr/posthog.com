@@ -6445,12 +6445,6 @@ export const docsMenu = {
                     color: 'red',
                 },
                 {
-                    name: 'Inbox Changelog',
-                    url: '/docs/posthog-code/inbox-changelog',
-                    icon: 'IconRocket',
-                    color: 'purple',
-                },
-                {
                     name: 'Open source',
                     url: '/docs/posthog-code/open-source',
                     icon: 'IconGithub',
